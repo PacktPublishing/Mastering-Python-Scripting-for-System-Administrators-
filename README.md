@@ -1,6 +1,6 @@
 # Mastering Python Scripting for System Administrators
 
-<a href="https://www.packtpub.com/networking-and-servers/mastering-python-scripting-system-administrators?utm_source=github&utm_medium=repository&utm_campaign=9781789133226 "><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B10738_MockupCover.png" alt="Mastering Python Scripting for System Administrators" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/networking-and-servers/mastering-python-scripting-system-administrators?utm_source=github&utm_medium=repository&utm_campaign=9781789133226 "><img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781789133226%20Copy.png" alt="Mastering Python Scripting for System Administrators" height="256px" align="right"></a>
 
 This is the code repository for [Mastering Python Scripting for System Administrators](https://www.packtpub.com/networking-and-servers/mastering-python-scripting-system-administrators?utm_source=github&utm_medium=repository&utm_campaign=9781789133226), published by Packt.
 
