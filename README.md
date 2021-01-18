@@ -1,8 +1,3 @@
-## $5 Tech Unlocked 2021!
-[Buy and download this Book for only $5 on PacktPub.com](https://www.packtpub.com/product/mastering-python-scripting-for-system-administrators/9781789133226)
------
-*If you have read this book, please leave a review on [Amazon.com](https://www.amazon.com/gp/product/178913322X).     Potential readers can then use your unbiased opinion to help them make purchase decisions. Thank you. The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
-
 # Mastering Python Scripting for System Administrators
 
 <a href="https://www.packtpub.com/networking-and-servers/mastering-python-scripting-system-administrators?utm_source=github&utm_medium=repository&utm_campaign=9781789133226 "><img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781789133226%20Copy.png" alt="Mastering Python Scripting for System Administrators" height="256px" align="right"></a>
