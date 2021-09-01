@@ -1,7 +1,9 @@
 import os
 
-os.remove('sample.txt')
+filen=input("enter file name to remove")
+os.remove(str(filen))
 print("File removed successfully")
 
-os.rmdir('work1')
+dirn=input("enter directory name to remove")
+os.rmdir(str(dirn))
 print("Directory removed successfully")
