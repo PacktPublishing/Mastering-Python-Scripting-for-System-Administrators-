@@ -2,10 +2,12 @@ import os
 
 inp=input("enter f for deleting a file, d for a directory")
 if inp == "f":
-    os.remove('sample.txt')
+    filen=input("enter file name to remove")
+    os.remove(str(filen))
     print("File removed successfully")
 elif inp == "d":
-    os.rmdir('work1')
+    dirn=input("enter directory name to remove")
+    os.rmdir(str(dirn))
     print("Directory removed successfully")
 else:
     print("wrong input")
