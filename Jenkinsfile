@@ -39,10 +39,11 @@ node ('slave1') {
     sh 'tar -cvzf build.tgz build/'
   }
 stage('Deploy') {
-sshPublisher(publishers: 
+/*sshPublisher(publishers: 
     [sshPublisherDesc(configName: 'staging', transfers:
         [sshTransfer(cleanRemote: false, excludes: '', 
-	execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
+	execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scrip
+	ts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
 	execTimeout: 120000,
 	flatten: false,
 	makeEmptyDirs: false,
@@ -55,12 +56,12 @@ sshPublisher(publishers:
 	usePromotionTimestamp: false,
 	useWorkspaceInPromotion: false,
 	verbose: true)])
-
-    if (env.BRANCH_NAME == "master") {
+*/
+    if (env.BRANCH_NAME == "pipe3") {
         echo "master branch detected, deploying on production too"
 
     sshPublisher(publishers:
-    [sshPublisherDesc(configName: 'production', transfers:
+    [sshPublisherDesc(configName: 'staging, production', transfers:
         [sshTransfer(cleanRemote: false, excludes: '',
         execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
         execTimeout: 120000,
