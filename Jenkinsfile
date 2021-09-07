@@ -61,7 +61,7 @@ stage('Deploy') {
         echo "master branch detected, deploying on production too"
 
     sshPublisher(publishers:
-    [sshPublisherDesc(configName: 'staging', transfers:
+    [sshPublisherDesc(configName: 'production', transfers:
         [sshTransfer(cleanRemote: false, excludes: '',
         execCommand: "[ -d /var/lib/py_scripts/build] && mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
         execTimeout: 120000,
