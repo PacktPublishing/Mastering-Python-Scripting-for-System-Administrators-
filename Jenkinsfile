@@ -39,7 +39,7 @@ node ('slave1') {
     sh 'tar -cvzf build.tgz build/'
   }
 stage('Deploy') {
-/*sshPublisher(publishers: 
+sshPublisher(publishers: 
     [sshPublisherDesc(configName: 'staging', transfers:
         [sshTransfer(cleanRemote: false, excludes: '', 
 	execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scrip
@@ -56,7 +56,7 @@ stage('Deploy') {
 	usePromotionTimestamp: false,
 	useWorkspaceInPromotion: false,
 	verbose: true)])
-*/
+
     if (env.BRANCH_NAME == "pipe3") {
         echo "master branch detected, deploying on production too"
 
