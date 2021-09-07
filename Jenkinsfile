@@ -39,7 +39,22 @@ node ('slave1') {
     sh 'tar -cvzf build.tgz build/'
   }
 stage('Deploy') {
-sshPublisher(publishers: [sshPublisherDesc(configName: 'staging', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'tar -xvzf /var/lib/py_scripts/build.tgz', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'build.tgz')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+sshPublisher(publishers: 
+    [sshPublisherDesc(configName: 'staging', transfers:
+        [sshTransfer(cleanRemote: false, excludes: '', 
+	execCommand: 'tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/',
+	execTimeout: 120000,
+	flatten: false,
+	makeEmptyDirs: false,
+	noDefaultExcludes: false,
+	patternSeparator: '[, ]+',
+	remoteDirectory: '',
+	remoteDirectorySDF: false,
+	removePrefix: '',
+	sourceFiles: 'build.tgz')],
+	usePromotionTimestamp: false,
+	useWorkspaceInPromotion: false,
+	verbose: true)])
 
 
 }
