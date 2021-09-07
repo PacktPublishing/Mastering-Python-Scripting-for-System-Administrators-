@@ -39,22 +39,22 @@ node ('slave1') {
     sh 'tar -cvzf build.tgz build/'
   }
 stage('Deploy') {
-sshPublisher(publishers: 
+sshPublisher(publishers:
     [sshPublisherDesc(configName: 'staging', transfers:
-        [sshTransfer(cleanRemote: false, excludes: '', 
-	execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
-	execTimeout: 120000,
-	flatten: false,
-	makeEmptyDirs: false,
-	noDefaultExcludes: false,
-	patternSeparator: '[, ]+',
-	remoteDirectory: '',
-	remoteDirectorySDF: false,
-	removePrefix: '',
-	sourceFiles: 'build.tgz')],
-	usePromotionTimestamp: false,
-	useWorkspaceInPromotion: false,
-	verbose: true)])
+        [sshTransfer(cleanRemote: false, excludes: '',
+        execCommand: "[ -d /var/lib/py_scripts/build] && mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
+        execTimeout: 120000,
+        flatten: false,
+        makeEmptyDirs: false,
+        noDefaultExcludes: false,
+        patternSeparator: '[, ]+',
+        remoteDirectory: '',
+        remoteDirectorySDF: false,
+        removePrefix: '',
+        sourceFiles: 'build.tgz')],
+        usePromotionTimestamp: false,
+        useWorkspaceInPromotion: false,
+        verbose: true)])
 
     if (env.BRANCH_NAME == "master") {
         echo "master branch detected, deploying on production too"
@@ -62,7 +62,7 @@ sshPublisher(publishers:
     sshPublisher(publishers:
     [sshPublisherDesc(configName: 'production', transfers:
         [sshTransfer(cleanRemote: false, excludes: '',
-        execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
+        execCommand: "[ -d /var/lib/py_scripts/build] && mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
         execTimeout: 120000,
         flatten: false,
         makeEmptyDirs: false,
