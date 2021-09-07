@@ -59,5 +59,10 @@ sshPublisher(publishers:
 
 }
 
+    if (env.BRANCH_NAME == "pipe3") {
+        echo "yess!"
+    } else {
+        echo "noo"
+    }
 
 }
