@@ -42,7 +42,7 @@ stage('Deploy') {
 sshPublisher(publishers: 
     [sshPublisherDesc(configName: 'staging', transfers:
         [sshTransfer(cleanRemote: false, excludes: '', 
-	execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_NUMBER}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
+	execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
 	execTimeout: 120000,
 	flatten: false,
 	makeEmptyDirs: false,
@@ -56,13 +56,28 @@ sshPublisher(publishers:
 	useWorkspaceInPromotion: false,
 	verbose: true)])
 
+    if (env.BRANCH_NAME == "master") {
+        echo "master branch detected, deploying on production too"
 
-}
+    sshPublisher(publishers:
+    [sshPublisherDesc(configName: 'production', transfers:
+        [sshTransfer(cleanRemote: false, excludes: '',
+        execCommand: "mv /var/lib/py_scripts/build /var/lib/py_scripts/build_bkp_${BUILD_TAG}; tar -xvzf /var/lib/py_scripts/build.tgz -C /var/lib/py_scripts/",
+        execTimeout: 120000,
+        flatten: false,
+        makeEmptyDirs: false,
+        noDefaultExcludes: false,
+        patternSeparator: '[, ]+',
+        remoteDirectory: '',
+        remoteDirectorySDF: false,
+        removePrefix: '',
+        sourceFiles: 'build.tgz')],
+        usePromotionTimestamp: false,
+        useWorkspaceInPromotion: false,
+        verbose: true)])
 
-    if (env.BRANCH_NAME == "pipe3") {
-        echo "yess!"
-    } else {
-        echo "noo"
-    }
+
+      }
+
 
 }
