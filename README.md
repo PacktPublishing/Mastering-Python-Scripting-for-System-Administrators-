@@ -1,3 +1,14 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781789133226)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
 # Mastering Python Scripting for System Administrators
 
 <a href="https://www.packtpub.com/networking-and-servers/mastering-python-scripting-system-administrators?utm_source=github&utm_medium=repository&utm_campaign=9781789133226 "><img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781789133226%20Copy.png" alt="Mastering Python Scripting for System Administrators" height="256px" align="right"></a>
