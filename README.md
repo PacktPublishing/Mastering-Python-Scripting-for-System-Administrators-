@@ -1,5 +1,3 @@
-
-
 # Mastering Python Scripting for System Administrators
 
 <a href="https://www.packtpub.com/networking-and-servers/mastering-python-scripting-system-administrators?utm_source=github&utm_medium=repository&utm_campaign=9781789133226 "><img src="https://dz13w8afd47il.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/9781789133226%20Copy.png" alt="Mastering Python Scripting for System Administrators" height="256px" align="right"></a>
@@ -47,6 +45,9 @@ With the following software and hardware list you can run all code files present
 | 18 | SQlite | Windows, Mac OS X, and Linux (Any) |
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it]().
+
+## Errata
+* Page 30: the Output of the number[1:6], _should be_ (2, 3, 4, 5, 6) _instead of_ (2,3,4,5)
 
 ### Related products
 * PowerShell Core for Linux Administrators Cookbook [[Packt]](https://www.packtpub.com/networking-and-servers/powershell-core-linux-administrators-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781789137231) [[Amazon]](https://www.amazon.com/dp/1789137233)
